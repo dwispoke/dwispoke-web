@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 54px;
+}
+
+.desc {
+  font-size: 16px;
+  color: #363636;
+}
+
+.infoRight {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
