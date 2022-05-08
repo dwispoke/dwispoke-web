@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .container {
   width: 100%;
 }
@@ -14,16 +16,35 @@
 
 .title {
   font-size: 54px;
+  margin: 10px 0;
+  font-weight: 700;
+  @include if-mobile {
+    font-size: 30px;
+  }
 }
 
 .desc {
   font-size: 16px;
   color: #363636;
+  padding: 0 10px;
+  @include if-mobile {
+    font-size: 12px;
+  }
 }
 
-.infoRight {
+.textbox {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: center;
+}
+
+.double {
+  display: flex;
+  @include if-mobile {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
 }

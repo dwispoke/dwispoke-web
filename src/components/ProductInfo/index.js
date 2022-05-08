@@ -14,7 +14,8 @@ const ProductInfo = () => {
         </div>
         <div className={style.section}>
           <h2 className={style.title}>
-            나만의 맞춤형 디자인으로 업무공간을 남다르게, <br />
+            나만의 맞춤형 디자인으로 <br />
+            업무공간을 남다르게, <br />
             트렌디 디자인
           </h2>
           <p className={style.desc}>
@@ -24,13 +25,13 @@ const ProductInfo = () => {
             효과를 누릴 수 있습니다.
           </p>
         </div>
-        <div className={style.section} style={{ display: "flex" }}>
+        <div className={`${style.section} ${style.double}`}>
           <img
             src={`/images/image1.png`}
             alt="설명이미지"
             style={{ flex: 1 }}
           />
-          <div className={style.infoRight}>
+          <div className={style.textbox}>
             <h2 className={style.title}>
               어두컴컴한 벽에서
               <br />
@@ -46,7 +47,8 @@ const ProductInfo = () => {
         </div>
         <div className={style.section}>
           <h2 className={style.title}>
-            아직도 모니터는 벽에 붙어 있어야한다는 <br />
+            아직도 모니터는 <br />
+            벽에 붙어 있어야한다는 <br />
             고정관념에 빠져 계신가요?
           </h2>
           <p className={style.desc}>

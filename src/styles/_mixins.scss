@@ -1,0 +1,7 @@
+$tablet-mobile-width: 768px;
+
+@mixin if-mobile() {
+  @media only screen and (max-width: $tablet-mobile-width) {
+    @content;
+  }
+}
