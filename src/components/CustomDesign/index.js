@@ -2,6 +2,7 @@ import React from 'react';
 import style from './index.module.scss';
 import { useState } from 'react';
 import monitor from '../../monitor.png';
+import shelf from '../../shelf.png';
 
 const bgImage=[
     "",
@@ -21,6 +22,7 @@ const bgImage=[
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duut1_left.png?$ORIGIN_PNG$",//브라우니 실버,
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3d_left.png?$ORIGIN_PNG$",//쉬머 바이올렛,
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3g_left.png?$ORIGIN_PNG$",//쉬머 차콜
+    shelf
 ]
 
 const CustomDesign = () => {
@@ -180,6 +182,17 @@ const CustomDesign = () => {
                             <button>
                                 <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_shimmercharcoal.png"} onClick={()=>changeBackgroundStyle(16)}></img>
                                 <span>쉬머 차콜</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div className={style.colorlist}>
+                    <span>선반</span>
+                    <ul className={style.myEditionColorList}>
+                        <li>
+                            <button>
+                                <img src={shelf} onClick={()=>changeBackgroundStyle(17)}></img>
+                                <span>선반</span>
                             </button>
                         </li>
                     </ul>
