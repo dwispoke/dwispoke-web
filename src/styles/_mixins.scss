@@ -1,7 +1,23 @@
 $tablet-mobile-width: 768px;
 
+$mobile-width:1000px;
+
+$pc-width:1200px;
+
+@mixin if-onlymobile() {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
 @mixin if-mobile() {
   @media only screen and (max-width: $tablet-mobile-width) {
+    @content;
+  }
+}
+
+@mixin if-pc() {
+  @media only screen and (max-width: $pc-width) {
     @content;
   }
 }

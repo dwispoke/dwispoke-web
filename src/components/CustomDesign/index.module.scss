@@ -6,6 +6,7 @@
     border-bottom: 1px solid black;
 }
 
+
 .inner{
     max-width: 1440px;
     margin: 0 auto;
@@ -15,8 +16,8 @@
     & > *{
         width:50%;
     }
-
-    @include if-mobile{
+      
+    @include if-onlymobile{
        flex-direction: column;
        align-items: center;
     }
@@ -30,9 +31,10 @@
     position:relative;
 
     & > img{
-        width:500px;
+        width:400px;
         height:auto;
     }
+
 
     & > div{
         border:1px solid #5F7464;
@@ -43,6 +45,7 @@
         display:flex;
         align-items: center;
         justify-content: center;
+        background: #E9E7E6;
         background-size: cover;
 
         & > div{
@@ -50,7 +53,7 @@
             width:20px;
             height:20px;
             padding:5px;
-            border:2px dashed black;
+            border:1.5px dashed black;
             border-radius: 50%;
             font-weight: 700;
             display:flex;
@@ -67,36 +70,36 @@
         }
     }
 
-    @include if-mobile{
-        width:320px;
-        height:300px;
+    // @include if-mobile{
+    //     width:320px;
+    //     height:300px;
 
-        & > img{
-            width:320px;
-            height:auto;
-        }
+    //     & > img{
+    //         width:320px;
+    //         height:auto;
+    //     }
     
-    }
+    // }
 }
 
 .firstPart{
-    top: 54px;
-    left:51px;
+    top: 0;
+    left:52px;
 }
 .secondPart{
     // background: yellow;
-    top:54px;
-    right: 51px;
+    top:0;
+    right: 52px;
 }
 .thirdPart{
     // background-color: yellowgreen;
-    bottom:96px;
-    left:51px;
+    bottom:149px;
+    left:52px;
 }
 .fourthPart{
     // background-color: aqua;
-    bottom:96px;
-    right:51px;
+    bottom:149px;
+    right:52px;
 }
 
 .colorWrapper{

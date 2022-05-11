@@ -1,9 +1,7 @@
-// https://stackoverflow.com/questions/58045542/changing-background-image-in-reactjs
-
-
 import React from 'react';
 import style from './index.module.scss';
 import { useState } from 'react';
+import monitor from '../../monitor.png';
 
 const bgImage=[
     "",
@@ -45,13 +43,10 @@ const CustomDesign = () => {
   
   return (
     <div className={style.container}>
-        <div>선택된 버튼:{curButton}</div>
-        <div>선택된 색깔:{numOfColor}</div>
-        <div>이미지 주소:{bgImage[imgUrl[1]]}</div>
-        <div>{}</div>
         <div className={style.inner}>
         <div className={style.imgWrapper}>
-            <img src={"https://images.samsung.com/kdp/goods/2022/03/04/9f4fe537-b4b7-428d-b768-cb2efd74e58a.png?$PD_GALLERY_L_PNG$"}></img>
+            <img src={monitor}></img>
+            {/* <img src={"https://images.samsung.com/kdp/goods/2022/03/04/9f4fe537-b4b7-428d-b768-cb2efd74e58a.png?$PD_GALLERY_L_PNG$"}></img> */}
             <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`}}>
                 <div style={imgUrl[1]!==0?hideStyle:null}>1</div>
             </div>
