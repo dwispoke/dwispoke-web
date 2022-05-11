@@ -6,6 +6,7 @@ import style from './index.module.scss';
 import { useState } from 'react';
 
 const bgImage=[
+    "",
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu18_left.png?$ORIGIN_PNG$",//글램바닐라
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu17_left.png?$ORIGIN_PNG$",//글램피치
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu35_left.png?$ORIGIN_PNG$",//글램 화이트
@@ -19,13 +20,9 @@ const CustomDesign = () => {
 
     const changeBackgroundStyle=(colorNum)=>{
         setNumOfColor(colorNum);
-        console.log(imgUrl);
         setImageUrl(imgUrl.map((val,idx)=>{
-            console.log(idx,val,colorNum,curButton);
             return idx===curButton?colorNum:val;
         }))
-        // setImageUrl({...imgUrl,[key]:colorNum});
-        console.log(imgUrl);
     }
 
     const hideStyle={
@@ -43,16 +40,16 @@ const CustomDesign = () => {
         <div className={style.imgWrapper}>
             <img src={"https://images.samsung.com/kdp/goods/2022/03/04/9f4fe537-b4b7-428d-b768-cb2efd74e58a.png?$PD_GALLERY_L_PNG$"}></img>
             <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`}}>
-                <div style={curButton===1?hideStyle:null}>1</div>
+                <div style={imgUrl[1]!==0?hideStyle:null}>1</div>
             </div>
             <div className={style.secondPart} onClick={()=>setCurButton(2)} style={{backgroundImage:`url(${bgImage[imgUrl[2]]})`}}>
-                <div style={curButton===2?hideStyle:null}>2</div>
+                <div style={imgUrl[2]!==0?hideStyle:null}>2</div>
             </div>
             <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={{backgroundImage:`url(${bgImage[imgUrl[3]]})`}}>
-                <div style={curButton===3?hideStyle:null}>3</div>
+                <div style={imgUrl[3]!==0?hideStyle:null}>3</div>
             </div>
             <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={{backgroundImage:`url(${bgImage[imgUrl[4]]})`}}>
-                <div style={curButton===4?hideStyle:null}>4</div>
+                <div style={imgUrl[4]!==0?hideStyle:null}>4</div>
             </div>
         </div>
         <div className={style.colorWrapper}>
@@ -63,19 +60,19 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamvanilla.png"} onClick={()=>changeBackgroundStyle(0)}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamvanilla.png"} onClick={()=>changeBackgroundStyle(1)}></img>
                                 <span>글램 바닐라</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampeach.png"} onClick={()=>changeBackgroundStyle(1)}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampeach.png"} onClick={()=>changeBackgroundStyle(2)}></img>
                                 <span>글램 피치</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamwhite.png"} onClick={()=>changeBackgroundStyle(2)}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamwhite.png"} onClick={()=>changeBackgroundStyle(3)}></img>
                                 <span>글램 화이트</span>
                             </button>
                         </li>

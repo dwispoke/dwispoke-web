@@ -35,7 +35,7 @@
     }
 
     & > div{
-        border:2px dashed black;
+        border:1px dashed #5F7464;
         cursor:pointer;
         width:190px;
         height:110px;
@@ -43,8 +43,10 @@
         display:flex;
         align-items: center;
         justify-content: center;
+        background-size: cover;
 
         & > div{
+            
             width:20px;
             height:20px;
             padding:5px;
@@ -76,12 +78,8 @@
     
     }
 }
-.firstPart:hover{
-    border:2px solid red;
-}
+
 .firstPart{
-    // background-color: red;
-    
     top: 53px;
     left:51px;
 }
@@ -167,6 +165,6 @@
 }
 
 
-.active{
+.selected{
     border:"1px solid #ddd"
 }
