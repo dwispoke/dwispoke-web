@@ -9,7 +9,20 @@ const bgImage=[
     "",
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu18_left.png?$ORIGIN_PNG$",//글램바닐라
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu17_left.png?$ORIGIN_PNG$",//글램피치
-    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu35_left.png?$ORIGIN_PNG$",//글램 화이트
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu35_left.png?$ORIGIN_PNG$",//글램 화이트,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu32_left.png?$ORIGIN_PNG$",//글램 핑크,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu41_left.png?$ORIGIN_PNG$",//글램 네이비,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu93_left.png?$ORIGIN_PNG$",//새틴토프,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu39_left.png?$ORIGIN_PNG$",//새틴베이지,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu31_left.png?$ORIGIN_PNG$",//새틴그레이,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duuw6_left.png?$ORIGIN_PNG$",//새틴 화이트,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu01_left.png?$ORIGIN_PNG$",//코타 화이트,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu05_left.png?$ORIGIN_PNG$",//코타 차콜,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3b_left.png?$ORIGIN_PNG$",//코타 모닝블루,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3c_left.png?$ORIGIN_PNG$",//코타 이브닝 코랄,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duut1_left.png?$ORIGIN_PNG$",//브라우니 실버,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3d_left.png?$ORIGIN_PNG$",//쉬머 바이올렛,
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3g_left.png?$ORIGIN_PNG$",//쉬머 차콜
 ]
 
 const CustomDesign = () => {
@@ -78,13 +91,13 @@ const CustomDesign = () => {
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampink.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampink.png"} onClick={()=>changeBackgroundStyle(4)}></img>
                                 <span>글램 핑크</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamnavy.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamnavy.png"} onClick={()=>changeBackgroundStyle(5)}></img>
                                 <span>글램 네이비</span>
                             </button>
                         </li>
@@ -95,25 +108,25 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satintaupe.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satintaupe.png"} onClick={()=>changeBackgroundStyle(6)}></img>
                                 <span>새틴 토프</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satinbeige.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satinbeige.png"} onClick={()=>changeBackgroundStyle(7)}></img>
                                 <span>새틴 베이지</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satingray.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satingray.png"} onClick={()=>changeBackgroundStyle(8)}></img>
                                 <span>새틴 그레이</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satinwhite.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_satinwhite.png"} onClick={()=>changeBackgroundStyle(9)}></img>
                                 <span>새틴 화이트</span>
                             </button>
                         </li>
@@ -124,25 +137,25 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottawhite.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottawhite.png"} onClick={()=>changeBackgroundStyle(10)}></img>
                                 <span>코타 화이트</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottacharcoal.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottacharcoal.png"} onClick={()=>changeBackgroundStyle(11)}></img>
                                 <span>코타 차콜</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottamorningblue.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottamorningblue.png"} onClick={()=>changeBackgroundStyle(12)}></img>
                                 <span>코타 모닝 블루</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottaeveningcoral.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_cottaeveningcoral.png"} onClick={()=>changeBackgroundStyle(13)}></img>
                                 <span>코타 이브닝 코랄</span>
                             </button>
                         </li>
@@ -153,7 +166,7 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_browniesilver.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_browniesilver.png"} onClick={()=>changeBackgroundStyle(14)}></img>
                                 <span>브라우니 실버</span>
                             </button>
                         </li>
@@ -164,13 +177,13 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_shimmerviolet.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_shimmerviolet.png"} onClick={()=>changeBackgroundStyle(15)}></img>
                                 <span>쉬머 바이올렛</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_shimmercharcoal.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_shimmercharcoal.png"} onClick={()=>changeBackgroundStyle(16)}></img>
                                 <span>쉬머 차콜</span>
                             </button>
                         </li>
