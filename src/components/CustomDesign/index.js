@@ -12,27 +12,32 @@ const CustomDesign = () => {
     const [curButton,setCurButton]=useState(0);
     const [numOfColor,setNumOfColor]=useState(0);
 
-    const onChangeColor=()=>{
-        if(curButton==0){
-    
-        }
+    const BackgroundStyle={
+        backgroundImage:"url(https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu18_left.png?$ORIGIN_PNG$)"
+    };
+
+    const hideStyle={
+        display:'none'
     }
+
+  
   return (
     <div className={style.container}>
+        <div>{curButton}</div>
         <div className={style.inner}>
         <div className={style.imgWrapper}>
             <img src={"https://images.samsung.com/kdp/goods/2022/03/04/9f4fe537-b4b7-428d-b768-cb2efd74e58a.png?$PD_GALLERY_L_PNG$"}></img>
-            <div className={style.firstPart} onClick={()=>setCurButton(1)}>
-                <div>1</div>
+            <div className={style.firstPart} onClick={()=>setCurButton(1)} style={curButton===1?BackgroundStyle:null}>
+                <div style={curButton===1?hideStyle:null}>1</div>
             </div>
-            <div className={style.secondPart} onClick={()=>setCurButton(2)}>
-                <div>2</div>
+            <div className={style.secondPart} onClick={()=>setCurButton(2)} style={curButton===2?BackgroundStyle:null}>
+                <div style={curButton===2?hideStyle:null}>2</div>
             </div>
-            <div className={style.thirdPart} onClick={()=>setCurButton(3)}>
-                <div>3</div>
+            <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={curButton===3?BackgroundStyle:null}>
+                <div style={curButton===3?hideStyle:null}>3</div>
             </div>
-            <div className={style.fourthPart} onClick={()=>setCurButton(4)}>
-                <div>4</div>
+            <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={curButton===4?BackgroundStyle:null}>
+                <div style={curButton===4?hideStyle:null}>4</div>
             </div>
         </div>
         <div className={style.colorWrapper}>
