@@ -15,11 +15,18 @@ const CustomDesign = () => {
 
     const [curButton,setCurButton]=useState(0);
     const [numOfColor,setNumOfColor]=useState(0);
+    const [imgUrl,setImageUrl]=useState([0,0,0,0,0]);
 
-    const BackgroundStyle={
-        backgroundImage:`url(${bgImage[numOfColor]})`,
-        border:"1px solid #ddd"
-    };
+    const changeBackgroundStyle=(colorNum)=>{
+        setNumOfColor(colorNum);
+        console.log(imgUrl);
+        setImageUrl(imgUrl.map((val,idx)=>{
+            console.log(idx,val,colorNum,curButton);
+            return idx===curButton?colorNum:val;
+        }))
+        // setImageUrl({...imgUrl,[key]:colorNum});
+        console.log(imgUrl);
+    }
 
     const hideStyle={
         display:'none'
@@ -28,20 +35,23 @@ const CustomDesign = () => {
   
   return (
     <div className={style.container}>
-        <div>{curButton}</div>
+        <div>선택된 버튼:{curButton}</div>
+        <div>선택된 색깔:{numOfColor}</div>
+        <div>이미지 주소:{bgImage[imgUrl[1]]}</div>
+        <div>{}</div>
         <div className={style.inner}>
         <div className={style.imgWrapper}>
             <img src={"https://images.samsung.com/kdp/goods/2022/03/04/9f4fe537-b4b7-428d-b768-cb2efd74e58a.png?$PD_GALLERY_L_PNG$"}></img>
-            <div className={style.firstPart} onClick={()=>setCurButton(1)} style={curButton===1?BackgroundStyle:null}>
+            <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`}}>
                 <div style={curButton===1?hideStyle:null}>1</div>
             </div>
-            <div className={style.secondPart} onClick={()=>setCurButton(2)} style={curButton===2?BackgroundStyle:null}>
+            <div className={style.secondPart} onClick={()=>setCurButton(2)} style={{backgroundImage:`url(${bgImage[imgUrl[2]]})`}}>
                 <div style={curButton===2?hideStyle:null}>2</div>
             </div>
-            <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={curButton===3?BackgroundStyle:null}>
+            <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={{backgroundImage:`url(${bgImage[imgUrl[3]]})`}}>
                 <div style={curButton===3?hideStyle:null}>3</div>
             </div>
-            <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={curButton===4?BackgroundStyle:null}>
+            <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={{backgroundImage:`url(${bgImage[imgUrl[4]]})`}}>
                 <div style={curButton===4?hideStyle:null}>4</div>
             </div>
         </div>
@@ -53,19 +63,19 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamvanilla.png"} onClick={()=>setNumOfColor(0)}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamvanilla.png"} onClick={()=>changeBackgroundStyle(0)}></img>
                                 <span>글램 바닐라</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampeach.png"} onClick={()=>setNumOfColor(1)}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampeach.png"} onClick={()=>changeBackgroundStyle(1)}></img>
                                 <span>글램 피치</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamwhite.png"} onClick={()=>setNumOfColor(2)}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamwhite.png"} onClick={()=>changeBackgroundStyle(2)}></img>
                                 <span>글램 화이트</span>
                             </button>
                         </li>
