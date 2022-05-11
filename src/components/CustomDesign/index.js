@@ -5,7 +5,11 @@ import React from 'react';
 import style from './index.module.scss';
 import { useState } from 'react';
 
-
+const bgImage=[
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu18_left.png?$ORIGIN_PNG$",//글램바닐라
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu17_left.png?$ORIGIN_PNG$",//글램피치
+    "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu35_left.png?$ORIGIN_PNG$",//글램 화이트
+]
 
 const CustomDesign = () => {
 
@@ -13,7 +17,8 @@ const CustomDesign = () => {
     const [numOfColor,setNumOfColor]=useState(0);
 
     const BackgroundStyle={
-        backgroundImage:"url(https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu18_left.png?$ORIGIN_PNG$)"
+        backgroundImage:`url(${bgImage[numOfColor]})`,
+        border:"1px solid #ddd"
     };
 
     const hideStyle={
@@ -48,19 +53,19 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamvanilla.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamvanilla.png"} onClick={()=>setNumOfColor(0)}></img>
                                 <span>글램 바닐라</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampeach.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glampeach.png"} onClick={()=>setNumOfColor(1)}></img>
                                 <span>글램 피치</span>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamwhite.png"}></img>
+                                <img src={"https://images.samsung.com/kdp/bespoke/images/v4/color/color_glamwhite.png"} onClick={()=>setNumOfColor(2)}></img>
                                 <span>글램 화이트</span>
                             </button>
                         </li>
