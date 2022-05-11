@@ -35,10 +35,10 @@
     }
 
     & > div{
-        border:1px dashed #5F7464;
+        border:1px solid #5F7464;
         cursor:pointer;
-        width:190px;
-        height:110px;
+        width:197px;
+        height: 116px;
         position:absolute;
         display:flex;
         align-items: center;
@@ -60,9 +60,9 @@
     }
 
     &  > div:hover{
-        border:3px dashed navy;
+        border:2px dashed navy;
         & > div{
-            border:3px dashed navy;
+            border:2px dashed navy;
             color:navy;
         }
     }
