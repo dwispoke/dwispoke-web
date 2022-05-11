@@ -37,8 +37,8 @@
     & > div{
         border:1px solid #5F7464;
         cursor:pointer;
-        width:197px;
-        height: 116px;
+        width:196.5px;
+        height: 115.22px;
         position:absolute;
         display:flex;
         align-items: center;
@@ -60,10 +60,10 @@
     }
 
     &  > div:hover{
-        border:2px dashed navy;
+        border:2px dashed #C69B7B;
         & > div{
-            border:2px dashed navy;
-            color:navy;
+            border:2px dashed #C69B7B;
+            color:#C69B7B;
         }
     }
 
@@ -80,22 +80,22 @@
 }
 
 .firstPart{
-    top: 53px;
+    top: 54px;
     left:51px;
 }
 .secondPart{
     // background: yellow;
-    top:53px;
+    top:54px;
     right: 51px;
 }
 .thirdPart{
     // background-color: yellowgreen;
-    bottom:95px;
+    bottom:96px;
     left:51px;
 }
 .fourthPart{
     // background-color: aqua;
-    bottom:95px;
+    bottom:96px;
     right:51px;
 }
 
@@ -164,7 +164,3 @@
     }
 }
 
-
-.selected{
-    border:"1px solid #ddd"
-}
