@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Header, ProductInfo, SpecTable } from "./components";
+import { Header, ProductInfo, SpecTable, ReviewContainer } from "./components";
 import { useScroll } from "./hooks";
 import style from "./App.module.scss";
 
@@ -20,6 +20,7 @@ function App() {
       {scrollTop > 0 && (
         <button className={style.btnUp} onClick={scrollToTop} />
       )}
+      <ReviewContainer />
     </div>
   );
 }
