@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  padding: 24px 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+@mixin star {
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.graystar {
+  @include star;
+  background-image: url("https://www.samsung.com/sec/static/_images/common/icon-star-gray.svg");
+}
+
+.yellowstar {
+  @include star;
+  background-image: url("https://www.samsung.com/sec/static/_images/common/icon-star.svg");
+}
+
+.text {
+  margin: 10px 5px;
+  width: 100%;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.userinfo {
+  text-align: right;
+  padding-top: 20px;
+  span {
+    color: #707070;
+    font-size: 16px;
+  }
+}
