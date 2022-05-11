@@ -1,0 +1,167 @@
+@import "../../styles/mixins";
+
+.container{
+    width:100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.inner{
+    max-width: 1440px;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    & > *{
+        width:50%;
+    }
+
+    @include if-mobile{
+       flex-direction: column;
+       align-items: center;
+    }
+}
+
+.imgWrapper{
+    
+    width: 500px;
+    height:383.41px;
+    overflow:hidden;
+    position:relative;
+
+    & > img{
+        width:500px;
+        height:auto;
+    }
+
+    & > div{
+        border:2px dashed black;
+        cursor:pointer;
+        width:190px;
+        height:110px;
+        position:absolute;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        & > div{
+            width:20px;
+            height:20px;
+            padding:5px;
+            border:2px dashed black;
+            border-radius: 50%;
+            font-weight: 700;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &  > div:hover{
+        border:3px dashed navy;
+        & > div{
+            border:3px dashed navy;
+            color:navy;
+        }
+    }
+
+    @include if-mobile{
+        width:320px;
+        height:300px;
+
+        & > img{
+            width:320px;
+            height:auto;
+        }
+    
+    }
+}
+.firstPart:hover{
+    border:2px solid red;
+}
+.firstPart{
+    // background-color: red;
+    
+    top: 53px;
+    left:51px;
+}
+.secondPart{
+    // background: yellow;
+    top:53px;
+    right: 51px;
+}
+.thirdPart{
+    // background-color: yellowgreen;
+    bottom:95px;
+    left:51px;
+}
+.fourthPart{
+    // background-color: aqua;
+    bottom:95px;
+    right:51px;
+}
+
+.colorWrapper{
+    padding:20px;
+    min-height:300px;
+}
+
+.colorTitle{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.colorPalette{
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    margin:10px 0;
+    min-height:300px;
+   
+
+
+}
+
+.colorlist{
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & > span{
+        margin-left:5px;
+        width:80px;
+        font-size:12px;
+        font-weight: 700;
+    }
+}
+
+.myEditionColorList{
+    display:flex;
+    & li{
+        margin:5px 5px;
+        width:80px;
+        display:flex;
+        justify-content: center;
+    }
+
+    &  img{
+        width:50px;
+        height:50px;
+        margin-bottom: 3px;
+    }
+
+
+    & button{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+
+        & span{
+            font-size: 10px;
+            text-align: center;
+            font-weight:bold;
+        }
+    }
+}

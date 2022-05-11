@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Header, ProductInfo, SpecTable } from "./components";
 import { useScroll } from "./hooks";
 import style from "./App.module.scss";
+import {CustomDesign} from './components/CustomDesign';
 
 function App() {
   const appRef = useRef(null);
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className={style.App} ref={appRef}>
       <Header />
+      <CustomDesign/>
       <ProductInfo />
       <SpecTable />
       {scrollTop > 0 && (
