@@ -39,7 +39,6 @@ app.post("/",(req,res)=>{
         const score=req.body.score;
         const like=req.body.like;
         const sqlQuery="INSERT INTO comment(nickname,text,score,like) VALUES (?,?,?,?)";
-        // const sqlQuery=`INSERT INTO comment (id,nickname,text,score,like) VALUES (1,'테스트네임','댓글입니당',5,23)`;
         db.query(sqlQuery,[nickname,text,score,like],(err,result)=>{
             if(err)throw err;
             console.log(result);
@@ -62,7 +61,7 @@ app.put("/like",(req,res)=>{
             const id=req.body.id;
             const like=req.body.like;
             const sqlQuery="UPDATE comment SET like= ? WHERE id= ?";
-            db.query(sqlQuery,[like,id],(err,result)=>{
+            db.query(sqlQuery,[like+1,id],(err,result)=>{
                 if(err)throw err;
                 
                 console.log(result);
