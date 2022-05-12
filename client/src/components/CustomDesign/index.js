@@ -28,11 +28,9 @@ const bgImage=[
 const CustomDesign = () => {
 
     const [curButton,setCurButton]=useState(0);
-    const [numOfColor,setNumOfColor]=useState(0);
     const [imgUrl,setImageUrl]=useState([0,0,0,0,0]);
 
     const changeBackgroundStyle=(colorNum)=>{
-        setNumOfColor(colorNum);
         setImageUrl(imgUrl.map((val,idx)=>{
             return idx===curButton?colorNum:val;
         }))
@@ -48,7 +46,6 @@ const CustomDesign = () => {
         <div className={style.inner}>
         <div className={style.imgWrapper}>
             <img src={monitor}></img>
-            {/* <img src={"https://images.samsung.com/kdp/goods/2022/03/04/9f4fe537-b4b7-428d-b768-cb2efd74e58a.png?$PD_GALLERY_L_PNG$"}></img> */}
             <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`}}>
                 <div style={imgUrl[1]!==0?hideStyle:null}>1</div>
             </div>
