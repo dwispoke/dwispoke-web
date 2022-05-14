@@ -4,3 +4,4 @@ export * from "./SpecTable";
 export * from "./Comment";
 export * from "./ReviewContainer";
 export * from "./StarBox";
+export * from "./ReviewForm";

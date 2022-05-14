@@ -1,5 +1,5 @@
 import React from "react";
-import { Comment } from "../Comment";
+import { Comment, ReviewForm } from "..";
 import style from "./index.module.scss";
 
 const defaultData = [
@@ -51,6 +51,7 @@ const ReviewContainer = ({ data = defaultData }) => {
             전체 상품평
             <span>{data.length}건</span>
           </p>
+          <ReviewForm />
           <ul className={style.list}>
             {data.map((comment) => (
               <Comment {...comment} key={`review_${comment.id}`} />
