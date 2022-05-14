@@ -14,7 +14,7 @@ const StarBox = ({ score }) => {
     }
     return stars;
   };
-  return <div>{renderStar()}</div>;
+  return <div className={style.container}>{renderStar()}</div>;
 };
 
 export { StarBox };

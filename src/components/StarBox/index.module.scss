@@ -1,3 +1,7 @@
+.container {
+  display: inline-block;
+}
+
 @mixin star {
   width: 16px;
   height: 15px;
