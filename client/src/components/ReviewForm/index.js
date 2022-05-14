@@ -4,6 +4,7 @@ import style from "./index.module.scss";
 
 const ReviewForm = () => {
   const [text, setText] = useState("");
+  const [nickname, setNickname] = useState("");
   const [score, setScore] = useState(5);
   return (
     <div className={style.container}>
@@ -27,6 +28,14 @@ const ReviewForm = () => {
           이용해 주세요. [타인에게 불쾌감을 유발할 수 있는 욕설과 저속한 비어를
           사용하거나 타인을 근거 없이 비방하는 리뷰는 제한될 수 있습니다.]
         </p>
+        <div className={style.wrap_nickname}>
+          <strong>이름: </strong>
+          <input
+            onChange={(e) => setNickname(e.target.value)}
+            value={nickname}
+          />
+        </div>
+
         <div className={style.wrap_button}>
           <button className={style.button_cancel}>취소</button>
           <button className={style.button_submit}>등록</button>

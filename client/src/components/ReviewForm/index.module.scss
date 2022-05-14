@@ -45,7 +45,7 @@
 }
 
 .wrap_button {
-  margin-top: 36px;
+  margin: 36px 0;
   text-align: center;
 }
 
@@ -70,4 +70,16 @@
   @include button;
   color: #fff;
   background-color: #212425;
+}
+
+.wrap_nickname {
+  text-align: center;
+  margin-top: 36px;
+  strong {
+    margin-right: 5px;
+  }
+  input {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
