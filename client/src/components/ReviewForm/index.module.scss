@@ -1,0 +1,73 @@
+.container {
+  width: 100%;
+}
+
+.wrap_starbox {
+  padding: 26px 24px 24px;
+  background-color: #fafafa;
+  border-top: 2px solid #000;
+  strong {
+    font-size: 24px;
+    margin: 0 3px 0 5px;
+    font-weight: bold;
+  }
+}
+
+.denominator {
+  color: #707070;
+  font-size: 16px;
+}
+
+.starbox_title {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.wrap_text {
+  padding: 24px;
+}
+
+.text {
+  width: 100%;
+  min-height: 180px;
+  font-size: 16px;
+  line-height: 24px;
+  resize: none;
+  overflow-y: auto;
+}
+
+.precaution {
+  color: #707070;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.wrap_button {
+  margin-top: 36px;
+  text-align: center;
+}
+
+@mixin button {
+  min-width: 150px;
+  height: 50px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 30px;
+  border: 2px solid #212425;
+  margin: 0 4px;
+}
+
+.button_cancel {
+  @include button;
+}
+
+.button_submit {
+  @include button;
+  color: #fff;
+  background-color: #212425;
+}

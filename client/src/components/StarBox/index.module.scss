@@ -1,0 +1,27 @@
+.container {
+  display: inline-block;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+@mixin star {
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.graystar {
+  @include star;
+  background-image: url("https://www.samsung.com/sec/static/_images/common/icon-star-gray.svg");
+}
+
+.yellowstar {
+  @include star;
+  background-image: url("https://www.samsung.com/sec/static/_images/common/icon-star.svg");
+}
