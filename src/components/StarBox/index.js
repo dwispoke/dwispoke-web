@@ -6,7 +6,10 @@ const StarBox = ({ score }) => {
     const stars = [];
     for (var i = 0; i < 5; i++) {
       stars.push(
-        <span className={i <= score ? style.yellowstar : style.graystar} />
+        <span
+          className={i <= score ? style.yellowstar : style.graystar}
+          key={`star_${i}`}
+        />
       );
     }
     return stars;
