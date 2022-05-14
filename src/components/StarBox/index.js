@@ -1,14 +1,18 @@
 import React from "react";
 import style from "./index.module.scss";
 
-const StarBox = ({ score }) => {
+const StarBox = ({ score, onClickStar }) => {
   const renderStar = () => {
     const stars = [];
-    for (var i = 0; i < 5; i++) {
+    for (let i = 1; i <= 5; i++) {
+      const star = i <= score ? style.yellowstar : style.graystar;
       stars.push(
         <span
-          className={i <= score ? style.yellowstar : style.graystar}
+          className={`${star} ${onClickStar && style.clickable}`}
           key={`star_${i}`}
+          onClick={() => {
+            onClickStar && onClickStar(i);
+          }}
         />
       );
     }

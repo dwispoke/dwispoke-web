@@ -9,9 +9,9 @@ const ReviewForm = () => {
     <div className={style.container}>
       <div className={style.wrap_starbox}>
         <span className={style.starbox_title}>평점선택</span>
-        <StarBox score={score} />
+        <StarBox score={score} onClickStar={setScore} />
         <strong>{score}</strong>
-        <span>/5</span>
+        <span className={style.denominator}>/5</span>
       </div>
       <div className={style.wrap_text}>
         <textarea
