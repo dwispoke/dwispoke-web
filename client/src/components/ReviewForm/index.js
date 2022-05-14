@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import { StarBox } from "..";
+import * as API from "../../apis/comment";
 import style from "./index.module.scss";
 
 const ReviewForm = () => {
   const [text, setText] = useState("");
   const [nickname, setNickname] = useState("");
   const [score, setScore] = useState(5);
+  const addComment = () => {
+    if (text < 10) {
+      alert("상품평은 10자 이상 적어주세요");
+      return;
+    }
+    if (nickname < 2) {
+      alert("이름은 2자 이상 적어주세요");
+      return;
+    }
+    API.createComment({ nickname, text, score });
+    alert("생성이 완료되었습니다!");
+  };
   return (
     <div className={style.container}>
       <div className={style.wrap_starbox}>
@@ -35,10 +48,11 @@ const ReviewForm = () => {
             value={nickname}
           />
         </div>
-
         <div className={style.wrap_button}>
           <button className={style.button_cancel}>취소</button>
-          <button className={style.button_submit}>등록</button>
+          <button className={style.button_submit} onClick={addComment}>
+            등록
+          </button>
         </div>
       </div>
     </div>
