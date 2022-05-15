@@ -7,54 +7,51 @@ const ProductInfo = () => {
       <div className={style.inner}>
         <div className={style.section}>
           <img
-            src={`https://images.samsung.com/is/image/samsung/sec-feature-french-door-rf85t926232-259803916?$FB_TYPE_A_JPG$`}
+            src={`/images/image1.png`}
             alt="설명이미지"
             style={{ width: "100%" }}
           />
         </div>
         <div className={style.section}>
           <h2 className={style.title}>
-            나만의 맞춤형 디자인으로 <br />
-            업무공간을 남다르게, <br />
-            트렌디 디자인
+            맞춤형 디자인으로 <br />
+            나만의 공간을 색다르게 <br />
           </h2>
           <p className={style.desc}>
-            플랫한 디자인으로 모던하고 트렌디한 사무실을 완성할 수 있습니다.
+            플랫한 디자인으로 모던하고 트렌디한 공간을 완성할 수 있습니다.
             <br />
             필요할 때 새로운 모듈을 교체하여 새 모니터를 산 것 같은 인테리어
             효과를 누릴 수 있습니다.
           </p>
         </div>
         <div className={`${style.section} ${style.double}`}>
-          <img
-            src={`/images/image1.png`}
-            alt="설명이미지"
-            style={{ flex: 1 }}
-          />
+          <div style={{ flex: 1 }}>
+            <img
+              src={`/images/image2.png`}
+              alt="설명이미지"
+              style={{ width: "100%" }}
+            />
+          </div>
           <div className={style.textbox}>
             <h2 className={style.title}>
-              어두컴컴한 벽에서
+              뒷면을 하나의
               <br />
-              근무는 NO!
+              인테리어 오브제로
             </h2>
-            <p className={style.desc}>
-              햇빛이 들어오는 환경에서 <br />
-              바깥 View를 만끽하며
-              <br />
-              쾌적한 환경에서 근무할 수 있습니다.
-            </p>
           </div>
         </div>
         <div className={style.section}>
           <h2 className={style.title}>
-            아직도 모니터는 <br />
-            벽에 붙어 있어야한다는 <br />
-            고정관념에 빠져 계신가요?
+            공간디자인을 도와주는
+            <br />
+            커스터마이징 모니터
           </h2>
           <p className={style.desc}>
-            모니터를 방 정가운데에 배치해
+            당신이 원하는대로 조합해보세요
             <br />
-            공간활용도를 높히고 인테리어 소품으로도 사용해보세요!
+            DIY뒤스포크는 다양한 라이프스타일을 고려해 제작되었으며,
+            <br />그 어느 때보다 당신의 취향을 드러낼 수 있는 디자인을
+            제공합니다.
           </p>
         </div>
       </div>
