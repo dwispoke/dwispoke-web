@@ -56,6 +56,17 @@ const ReviewContainer = () => {
     await fetchData();
     setOnEdit(false);
   };
+  const voteUp = async (id) => {
+    const newData = [...data];
+    await API.voteUp({ id });
+    for (let i = 0; i < newData.length; i++) {
+      if (newData[i].id === id) {
+        newData[i].liked += 1;
+        break;
+      }
+    }
+    setData(newData);
+  };
   return (
     <div className={style.container}>
       <div className={style.inner}>
@@ -85,7 +96,10 @@ const ReviewContainer = () => {
               <p className={style.empty}>작성된 상품평이 없습니다.</p>
             ) : (
               data.map((comment) => (
-                <Comment {...comment} key={`review_${comment.id}`} />
+                <Comment
+                  {...{ ...comment, voteUp }}
+                  key={`review_${comment.id}`}
+                />
               ))
             )}
           </ul>

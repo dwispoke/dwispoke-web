@@ -59,14 +59,13 @@ app.get("/like/:id", (req, res) => {
 // 좋아요 증가
 app.put("/like", (req, res) => {
   const id = req.body.id;
-  const like = req.body.like;
-  const sqlQuery = "UPDATE comment SET like= ? WHERE id= ?";
-  db.query(sqlQuery, [like + 1, id], (err, result) => {
+  const sqlQuery =
+    "UPDATE comment SET liked=(SELECT LIKED Where id = ?) + 1 WHERE id= ?";
+  db.query(sqlQuery, [id, id], (err, result) => {
     if (err) throw err;
 
     console.log(result);
     res.send(result);
-    res.redirect("/");
   });
 });
 
