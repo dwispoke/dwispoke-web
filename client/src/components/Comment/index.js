@@ -24,9 +24,4 @@ const Comment = ({ text, score, nickname, liked, voteUp, id }) => {
   );
 };
 
-const MemoizedComment = React.memo(
-  Comment,
-  (prevProps, nextProps) => prevProps.id === nextProps.id
-);
-
-export { MemoizedComment as Comment };
+export { Comment };
