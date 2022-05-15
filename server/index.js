@@ -9,8 +9,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname,"../client/build")));
-app.get('/*', (req, res) => {
-  res.sendFile(paht.join(__dirname, '../client/build/index.html'));
+app.get('/react', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
