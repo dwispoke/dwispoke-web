@@ -9,7 +9,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "../client/build")));
-app.get("/react", (req, res) => {
+app.get("/home", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 app.use(cors({ origin: true, credentials: true }));
@@ -47,7 +47,7 @@ app.post("/api", (req, res) => {
     "INSERT INTO comment(nickname,text,score,liked) VALUES (?,?,?,?)";
   db.query(sqlQuery, [nickname, text, score, like], (err, result) => {
     if (err) throw err;
-    console.log(result);
+    // console.log(result);
     res.send(result);
   });
 });
@@ -57,7 +57,7 @@ app.get("/api/like/:id", (req, res) => {
   const sqlQuery = "select like from comment where id= " + req.params.id;
   db.query(sqlQuery, (err, result) => {
     if (err) throw err;
-    console.log(result);
+    // console.log(result);
     res.send(result);
   });
 });
@@ -70,7 +70,7 @@ app.put("/api/like", (req, res) => {
   db.query(sqlQuery, [id, id], (err, result) => {
     if (err) throw err;
 
-    console.log(result);
+    // console.log(result);
     res.send(result);
   });
 });
