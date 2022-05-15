@@ -7,7 +7,7 @@ const ProductInfo = () => {
       <div className={style.inner}>
         <div className={style.section}>
           <img
-            src={`/images/image1.png`}
+            src={`/images/image2.png`}
             alt="설명이미지"
             style={{ width: "100%" }}
           />
@@ -27,7 +27,7 @@ const ProductInfo = () => {
         <div className={`${style.section} ${style.double}`}>
           <div style={{ flex: 1 }}>
             <img
-              src={`/images/image2.png`}
+              src={`/images/image1.png`}
               alt="설명이미지"
               style={{ width: "100%" }}
             />
