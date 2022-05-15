@@ -67,6 +67,14 @@ const ReviewContainer = () => {
     }
     setData(newData);
   };
+  const renderReviewList = () => {
+    if (!data || data.length === 0) {
+      return <p className={style.empty}>작성된 상품평이 없습니다.</p>;
+    }
+    return data.map((comment) => (
+      <Comment {...{ ...comment, voteUp }} key={`review_${comment.id}`} />
+    ));
+  };
   return (
     <div className={style.container}>
       <div className={style.inner}>
@@ -91,18 +99,7 @@ const ReviewContainer = () => {
         {onEdit ? (
           <ReviewForm onComplete={onComplete} />
         ) : (
-          <ul className={style.list}>
-            {!data || data.length === 0 ? (
-              <p className={style.empty}>작성된 상품평이 없습니다.</p>
-            ) : (
-              data.map((comment) => (
-                <Comment
-                  {...{ ...comment, voteUp }}
-                  key={`review_${comment.id}`}
-                />
-              ))
-            )}
-          </ul>
+          <ul className={style.list}>{renderReviewList()}</ul>
         )}
       </div>
     </div>

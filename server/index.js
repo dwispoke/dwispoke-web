@@ -2,15 +2,15 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
-const path=require("path");
+const path = require("path");
 
 const PORT = process.env.port || 8000;
 const cors = require("cors");
 require("dotenv").config();
 
-app.use(express.static(path.join(__dirname,"../client/build")));
-app.get('/react', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.get("/react", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,10 +28,8 @@ db.connect((err) => {
   console.log("DB 연결됨");
 });
 
-
-
 //조회 기능
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   const sqlQuery = "select * from comment order by id desc";
   db.query(sqlQuery, (err, result) => {
     if (err) throw err;
@@ -40,7 +38,7 @@ app.get("/", (req, res) => {
   });
 });
 //댓글 생성 기능
-app.post("/", (req, res) => {
+app.post("/api", (req, res) => {
   const nickname = req.body.nickname;
   const text = req.body.text;
   const score = req.body.score;
@@ -55,7 +53,7 @@ app.post("/", (req, res) => {
 });
 
 //좋아요개수 가져오기
-app.get("/like/:id", (req, res) => {
+app.get("/api/like/:id", (req, res) => {
   const sqlQuery = "select like from comment where id= " + req.params.id;
   db.query(sqlQuery, (err, result) => {
     if (err) throw err;
@@ -65,7 +63,7 @@ app.get("/like/:id", (req, res) => {
 });
 
 // 좋아요 증가
-app.put("/like", (req, res) => {
+app.put("/api/like", (req, res) => {
   const id = req.body.id;
   const sqlQuery =
     "UPDATE comment SET liked=(SELECT LIKED Where id = ?) + 1 WHERE id= ?";
