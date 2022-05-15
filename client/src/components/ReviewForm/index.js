@@ -7,7 +7,7 @@ const ReviewForm = ({ onComplete }) => {
   const [text, setText] = useState("");
   const [nickname, setNickname] = useState("");
   const [score, setScore] = useState(5);
-  const addComment = () => {
+  const addComment = async () => {
     if (text < 10) {
       alert("상품평은 10자 이상 적어주세요");
       return;
@@ -16,7 +16,7 @@ const ReviewForm = ({ onComplete }) => {
       alert("이름은 2자 이상 적어주세요");
       return;
     }
-    API.createComment({ nickname, text, score });
+    await API.createComment({ nickname, text, score });
     alert("생성이 완료되었습니다!");
     onComplete();
   };

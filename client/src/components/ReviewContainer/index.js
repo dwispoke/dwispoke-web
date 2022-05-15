@@ -52,6 +52,10 @@ const ReviewContainer = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  const onComplete = async () => {
+    await fetchData();
+    setOnEdit(false);
+  };
   return (
     <div className={style.container}>
       <div className={style.inner}>
@@ -70,11 +74,7 @@ const ReviewContainer = () => {
           </button>
         </div>
         {onEdit ? (
-          <ReviewForm
-            onComplete={() => {
-              setOnEdit(false);
-            }}
-          />
+          <ReviewForm onComplete={onComplete} />
         ) : (
           <ul className={style.list}>
             {data.map((comment) => (
