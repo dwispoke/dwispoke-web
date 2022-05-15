@@ -16,14 +16,26 @@
 .wrap_count {
   display: flex;
   padding-bottom: 10px;
-  button {
-    margin-left: auto;
-    min-width: 84px;
-    border: 1px solid #212425;
-    padding: 0 20px;
-    border-radius: 15px;
-    font-weight: bold;
-    height: 35px;
+  align-items: center;
+}
+
+.btn_write {
+  margin-left: auto;
+  min-width: 84px;
+  border: 1px solid #212425;
+  padding: 0 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  height: 35px;
+}
+
+.btn_refresh {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  img {
+    width: 100%;
+    height: 100%;
   }
 }
 

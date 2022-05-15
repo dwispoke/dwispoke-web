@@ -65,7 +65,11 @@ const ReviewContainer = () => {
             전체 상품평
             <span>{data.length}건</span>
           </p>
+          <button className={style.btn_refresh} onClick={fetchData}>
+            <img src={`/images/sync.png`} alt="새로고침" />
+          </button>
           <button
+            className={style.btn_write}
             onClick={() => {
               setOnEdit(true);
             }}
