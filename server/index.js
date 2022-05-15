@@ -1,11 +1,17 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const bodyParser = require("body-parser");
+const path=require("path");
+
 const PORT = process.env.port || 8000;
 const cors = require("cors");
 require("dotenv").config();
 
+app.use(express.static(path.join(__dirname,"../client/build")));
+app.get('/*', (req, res) => {
+  res.sendFile(paht.join(__dirname, '../client/build/index.html'));
+});
 app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,6 +27,8 @@ db.connect((err) => {
   if (err) throw err;
   console.log("DB 연결됨");
 });
+
+
 
 //조회 기능
 app.get("/", (req, res) => {
