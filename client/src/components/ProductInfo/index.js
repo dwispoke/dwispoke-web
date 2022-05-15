@@ -38,6 +38,11 @@ const ProductInfo = () => {
               <br />
               인테리어 오브제로
             </h2>
+            <p className={style.desc}>
+              프레임, 선반, 컬러블록까지
+              <br />
+              원하는대로 다양하게!
+            </p>
           </div>
         </div>
         <div className={style.section}>

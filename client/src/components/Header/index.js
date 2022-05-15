@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className={style.container}>
       <div className={style.inner}>
-        <a href="./" className={style.anchor}>
+        <a href="/home" className={style.anchor}>
           <img
             src="https://www.samsung.com/sec/static/_images/common/logo_samsung_black.svg"
             alt="삼성"
