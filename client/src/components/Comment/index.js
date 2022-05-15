@@ -18,7 +18,7 @@ const Comment = ({ text, score, nickname, liked }) => {
             <span>{liked}</span>
           </button>
         </div>
-        <span>{nickname}</span>
+        <span className={style.nickname}>{nickname}</span>
       </div>
     </li>
   );
