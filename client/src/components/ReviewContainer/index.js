@@ -92,7 +92,7 @@ const ReviewContainer = () => {
           <ReviewForm onComplete={onComplete} />
         ) : (
           <ul className={style.list}>
-            {data.length === 0 ? (
+            {!data || data.length === 0 ? (
               <p className={style.empty}>작성된 상품평이 없습니다.</p>
             ) : (
               data.map((comment) => (
