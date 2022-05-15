@@ -23,6 +23,7 @@ function App() {
         <button className={style.btnUp} onClick={scrollToTop} />
       )}
       <ReviewContainer />
+      <div className={style.footer}></div>
     </div>
   );
 }

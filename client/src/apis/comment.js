@@ -11,6 +11,6 @@ export const createComment = async ({ nickname, text, score }) => {
 };
 
 export const voteUp = async ({ id }) => {
-  const { data } = await endpoint.put("/", { id });
+  const { data } = await endpoint.put("/like", { id });
   return data;
 };
