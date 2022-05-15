@@ -3,7 +3,7 @@ import { StarBox } from "..";
 import * as API from "../../apis/comment";
 import style from "./index.module.scss";
 
-const ReviewForm = () => {
+const ReviewForm = ({ onComplete }) => {
   const [text, setText] = useState("");
   const [nickname, setNickname] = useState("");
   const [score, setScore] = useState(5);
@@ -18,6 +18,7 @@ const ReviewForm = () => {
     }
     API.createComment({ nickname, text, score });
     alert("생성이 완료되었습니다!");
+    onComplete();
   };
   return (
     <div className={style.container}>
@@ -49,7 +50,9 @@ const ReviewForm = () => {
           />
         </div>
         <div className={style.wrap_button}>
-          <button className={style.button_cancel}>취소</button>
+          <button className={style.button_cancel} onClick={onComplete}>
+            취소
+          </button>
           <button className={style.button_submit} onClick={addComment}>
             등록
           </button>

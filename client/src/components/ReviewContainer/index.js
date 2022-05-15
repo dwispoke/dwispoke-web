@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Comment, ReviewForm } from "..";
+import * as API from "../../apis/comment";
 import style from "./index.module.scss";
 
 const defaultData = [
@@ -41,23 +42,46 @@ const defaultData = [
   },
 ];
 
-const ReviewContainer = ({ data = defaultData }) => {
+const ReviewContainer = () => {
+  const [data, setData] = useState(defaultData);
+  const [onEdit, setOnEdit] = useState(false);
+  const fetchData = async () => {
+    const data = await API.getAllComments();
+    setData(data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className={style.container}>
       <div className={style.inner}>
         <h2 className={style.title}>상품평</h2>
-        <div>
+        <div className={style.wrap_count}>
           <p className={style.count}>
             전체 상품평
             <span>{data.length}건</span>
           </p>
-          <ReviewForm />
+          <button
+            onClick={() => {
+              setOnEdit(true);
+            }}
+          >
+            상품평 작성
+          </button>
+        </div>
+        {onEdit ? (
+          <ReviewForm
+            onComplete={() => {
+              setOnEdit(false);
+            }}
+          />
+        ) : (
           <ul className={style.list}>
             {data.map((comment) => (
               <Comment {...comment} key={`review_${comment.id}`} />
             ))}
           </ul>
-        </div>
+        )}
       </div>
     </div>
   );
