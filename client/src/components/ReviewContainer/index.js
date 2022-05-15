@@ -81,9 +81,13 @@ const ReviewContainer = () => {
           <ReviewForm onComplete={onComplete} />
         ) : (
           <ul className={style.list}>
-            {data.map((comment) => (
-              <Comment {...comment} key={`review_${comment.id}`} />
-            ))}
+            {data.length === 0 ? (
+              <p className={style.empty}>작성된 상품평이 없습니다.</p>
+            ) : (
+              data.map((comment) => (
+                <Comment {...comment} key={`review_${comment.id}`} />
+              ))
+            )}
           </ul>
         )}
       </div>
