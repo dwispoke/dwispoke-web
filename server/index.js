@@ -32,7 +32,7 @@ db.connect((err) => {
 
 //조회 기능
 app.get("/", (req, res) => {
-  const sqlQuery = "select * from comment";
+  const sqlQuery = "select * from comment order by id desc";
   db.query(sqlQuery, (err, result) => {
     if (err) throw err;
     console.log(result);
