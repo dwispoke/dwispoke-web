@@ -10,34 +10,58 @@
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  & > * {
-    width: 50%;
-    @include if-onlymobile {
-      width: 100%;
-    }
+
+  & > div{
+    margin:80px;
   }
 
-  @include if-onlymobile {
+  @include if-mobile {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    & > div{
+      margin:0;
+    }
   }
+
 }
 
 .imgWrapper {
-  width: 500px;
+  min-width: 500px;
+  max-width: 500px;
   height: 383.41px;
-  overflow: hidden;
-  position: relative;
-  @include if-onlymobile {
-    width: 100%;
-  }
   & > img {
     width: 400px;
     height: auto;
   }
+
+  @include if-mobile{
+    min-width: 500px;
+    max-width: 500px;
+    height:200px;
+    & > img {
+      width: 400px;
+      height: auto;
+    }
+    margin:30px 0;
+  }
+
+  overflow: hidden;
+  position: relative;
+  @include if-mobile {
+    min-width: 340px;
+    max-width: 340px;
+    display:flex;
+    justify-content: center;
+    & > img {
+      width: 300px;
+      height: auto;
+    }
+  }
+
 
   & > div {
     border: 1px solid #5f7464;
@@ -51,6 +75,11 @@
     background: #e9e7e6;
     background-size: cover;
 
+    @include if-mobile {
+      width: 146px;
+      height: 90px;
+    }
+
     & > div {
       width: 20px;
       height: 20px;
@@ -62,6 +91,8 @@
       align-items: center;
       justify-content: center;
     }
+
+
   }
 
   & > div:hover {
@@ -71,60 +102,59 @@
       color: #c69b7b;
     }
   }
-
-  // @include if-mobile{
-  //     width:320px;
-  //     height:300px;
-
-  //     & > img{
-  //         width:320px;
-  //         height:auto;
-  //     }
-
-  // }
 }
 
 .firstPart {
   top: 0;
   left: 52px;
-  @include if-onlymobile {
-    left: 0;
-    width: 50%;
+  @include if-mobile {
+    top:2px;
+    left: 22px;
+    // width: 50%;
   }
 }
 .secondPart {
   // background: yellow;
   top: 0;
   right: 52px;
-  @include if-onlymobile {
-    right: 0;
-    width: 50%;
+  @include if-mobile {
+    top:2px;
+    right: 22px;
+    // width: 50%;
   }
 }
 .thirdPart {
   // background-color: yellowgreen;
   bottom: 149px;
   left: 52px;
-  @include if-onlymobile {
-    left: 0;
-    width: 50%;
+  @include if-mobile {
+    left: 22px;
+    bottom: 16px;
+    // width: 50%;
   }
 }
 .fourthPart {
   // background-color: aqua;
   bottom: 149px;
   right: 52px;
-  @include if-onlymobile {
-    right: 0;
-    width: 50%;
+  @include if-mobile {
+    right: 22px;
+    bottom:16px;
+    // width: 50%;
   }
 }
 
 .colorWrapper {
   padding: 20px;
   min-height: 300px;
-  @include if-onlymobile {
+  @include if-mobile {
     padding: 0;
+  }
+  @include if-mobile {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
