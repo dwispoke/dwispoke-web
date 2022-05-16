@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .container {
   width: 100%;
 }
@@ -5,12 +7,16 @@
 .inner {
   max-width: 1200px;
   margin: 0 auto;
+  @include if-mobile{
+    margin:0 20px;
+  }
 }
 
 .title {
-  padding: 40px 0;
+  padding: 40px 0px;
   font-size: 36px;
   font-weight: bold;
+
 }
 
 .wrap_count {

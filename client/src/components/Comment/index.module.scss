@@ -3,6 +3,9 @@
 .container {
   width: 100%;
   padding: 24px 24px;
+  @include if-mobile{
+    padding:24px 0;
+  }
   box-sizing: border-box;
   border-bottom: 1px solid #d9d9d9;
 }
@@ -40,11 +43,13 @@
   }
 }
 .wrap_like {
+
   button {
     height: 26px;
     width: 80px;
     background-color: #ededed;
     border-radius: 10px;
+    margin-left:5px;
     span {
       color: #000;
     }

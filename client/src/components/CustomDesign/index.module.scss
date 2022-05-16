@@ -110,7 +110,6 @@
   @include if-mobile {
     top:2px;
     left: 22px;
-    // width: 50%;
   }
 }
 .secondPart {
@@ -120,7 +119,7 @@
   @include if-mobile {
     top:2px;
     right: 22px;
-    // width: 50%;
+
   }
 }
 .thirdPart {
@@ -130,7 +129,7 @@
   @include if-mobile {
     left: 22px;
     bottom: 16px;
-    // width: 50%;
+
   }
 }
 .fourthPart {
@@ -171,7 +170,6 @@
   min-height: 300px;
   min-width: 400px;
   @include if-mobile {
-    // width: 100%;
     min-width: 100%;
     box-sizing: border-box;
     margin:20px;
