@@ -159,6 +159,9 @@
 .colorTitle {
   font-size: 18px;
   font-weight: 700;
+  @include if-onlymobile {
+    font-size: 14px;
+  }
 }
 
 .colorPalette {
