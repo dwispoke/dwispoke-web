@@ -31,15 +31,22 @@ const bgImage=[
     redBrown
 ]
 
+const frame=["none","red","brown","blue"];
+
 const CustomDesign = () => {
 
     const [curButton,setCurButton]=useState(0);
+    const [frameColor,setFrameColor]=useState(0);
     const [imgUrl,setImageUrl]=useState([0,0,0,0,0]);
 
     const changeBackgroundStyle=(colorNum)=>{
         setImageUrl(imgUrl.map((val,idx)=>{
             return idx===curButton?colorNum:val;
         }))
+    }
+
+    const changeFrameStyle=(frameNum)=>{
+        return frame[frameNum];
     }
 
     const hideStyle={
@@ -52,18 +59,19 @@ const CustomDesign = () => {
         <div className={style.inner}>
         <div className={style.imgWrapper}>
             <img src={monitor}></img>
-            <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`}}>
+            <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`,borderTop:`8px solid ${frame[frameColor]}`,borderLeft:`8px solid ${frame[frameColor]}`}}>
                 <div style={imgUrl[1]!==0?hideStyle:null}>1</div>
             </div>
-            <div className={style.secondPart} onClick={()=>setCurButton(2)} style={{backgroundImage:`url(${bgImage[imgUrl[2]]})`}}>
+            <div className={style.secondPart} onClick={()=>setCurButton(2)} style={{backgroundImage:`url(${bgImage[imgUrl[2]]})`, borderTop:`8px solid ${frame[frameColor]}`,borderRight:`8px solid ${frame[frameColor]}`}}>
                 <div style={imgUrl[2]!==0?hideStyle:null}>2</div>
             </div>
-            <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={{backgroundImage:`url(${bgImage[imgUrl[3]]})`}}>
+            <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={{backgroundImage:`url(${bgImage[imgUrl[3]]})`,borderBottom:`8px solid ${frame[frameColor]}`,borderLeft:`8px solid ${frame[frameColor]}`}}>
                 <div style={imgUrl[3]!==0?hideStyle:null}>3</div>
             </div>
-            <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={{backgroundImage:`url(${bgImage[imgUrl[4]]})`}}>
+            <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={{backgroundImage:`url(${bgImage[imgUrl[4]]})`,borderBottom:`8px solid ${frame[frameColor]}`,borderRight:`8px solid ${frame[frameColor]}`}}>
                 <div style={imgUrl[4]!==0?hideStyle:null}>4</div>
             </div>
+          
         </div>
         <div className={style.colorWrapper}>
         <div className={style.colorTitle}>내 스마트 모니터와 어울리는 컬러와 소재 입히기</div>
@@ -218,7 +226,31 @@ const CustomDesign = () => {
                         </li>
                     </ul>
                 </div>
+                <div className={style.colorlist}>
+                    <span>선반</span>
+                    <ul className={style.myEditionColorList}>
+                        <li>
+                            <button>
+                                <img src={lightBrownShelf} onClick={()=>setFrameColor(1)} className={style.shelf}></img>
+                                <span>라이트 브라운</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src={darkbrown} onClick={()=>setFrameColor(2)} className={style.shelf}></img>
+                                <span>다크 브라운</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src={whiteshelf} onClick={()=>setFrameColor(3)} className={style.shelf}></img>
+                                <span>화이트</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
+            
         </div>
         </div>
     </div>

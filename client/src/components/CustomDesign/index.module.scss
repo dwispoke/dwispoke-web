@@ -68,17 +68,19 @@
     border: 1px solid #5f7464;
     cursor: pointer;
     width: 196.5px;
-    height: 115.22px;
+    min-height: 115.22px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #e9e7e6;
     background-size: cover;
+    background-position: center center;
+
 
     @include if-mobile {
-      width: 146px;
-      height: 90px;
+      width: 146.1px;
+      min-height: 90px;
     }
 
     & > div {
@@ -206,6 +208,7 @@
     width: 50px;
     height: 50px;
     margin-bottom: 3px;
+
   }
 
   & button {
