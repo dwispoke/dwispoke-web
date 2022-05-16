@@ -147,9 +147,7 @@
 .colorWrapper {
   padding: 20px;
   min-height: 300px;
-  @include if-mobile {
-    padding: 0;
-  }
+
   @include if-mobile {
     display:flex;
     flex-direction: column;
@@ -168,11 +166,12 @@
   border-radius: 10px;
   margin: 10px 0;
   min-height: 300px;
-  min-width: 500px;
-  @include if-onlymobile {
-    width: 100%;
+  min-width: 400px;
+  @include if-mobile {
+    // width: 100%;
     min-width: 100%;
     box-sizing: border-box;
+    margin:20px;
   }
 }
 
