@@ -2,7 +2,10 @@ import React from 'react';
 import style from './index.module.scss';
 import { useState } from 'react';
 import monitor from '../../monitor.png';
-import shelf from '../../shelf.png';
+import lightBrownShelf from '../../lightBrownShelf.png';
+import redBrown from '../../redbrown.png';
+import whiteshelf from '../../whiteshelf.png'
+import darkbrown from '../../darkbrown.png'
 
 const bgImage=[
     "",
@@ -22,7 +25,10 @@ const bgImage=[
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duut1_left.png?$ORIGIN_PNG$",//브라우니 실버,
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3d_left.png?$ORIGIN_PNG$",//쉬머 바이올렛,
     "https://images.samsung.com/kdp/bespoke/images/v3/door/ra-f18duu3g_left.png?$ORIGIN_PNG$",//쉬머 차콜
-    shelf
+    lightBrownShelf,
+    darkbrown,
+    whiteshelf,
+    redBrown
 ]
 
 const CustomDesign = () => {
@@ -188,8 +194,26 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <button>
-                                <img src={shelf} onClick={()=>changeBackgroundStyle(17)}></img>
-                                <span>선반</span>
+                                <img src={lightBrownShelf} onClick={()=>changeBackgroundStyle(17)} className={style.shelf}></img>
+                                <span>라이트 브라운</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src={darkbrown} onClick={()=>changeBackgroundStyle(18)} className={style.shelf}></img>
+                                <span>다크 브라운</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src={whiteshelf} onClick={()=>changeBackgroundStyle(19)} className={style.shelf}></img>
+                                <span>화이트</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src={redBrown} onClick={()=>changeBackgroundStyle(20)}></img>
+                                <span>레드 브라운</span>
                             </button>
                         </li>
                     </ul>
