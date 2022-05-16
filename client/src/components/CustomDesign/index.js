@@ -31,7 +31,7 @@ const bgImage=[
     redBrown
 ]
 
-const frame=["none","#C6AC89","#96634A","blue"];
+const frame=["none","#C6AC89","#96634A","#fff"];
 
 const CustomDesign = () => {
 
@@ -227,25 +227,19 @@ const CustomDesign = () => {
                     </ul>
                 </div>
                 <div className={style.colorlist}>
-                    <span>선반</span>
+                    <span>프레임 색상</span>
                     <ul className={style.myEditionColorList}>
                         <li>
-                            <button>
-                                <img src={lightBrownShelf} onClick={()=>setFrameColor(1)} className={style.shelf}></img>
-                                <span>라이트 브라운</span>
-                            </button>
+                            <div>
+                                <button onClick={()=>setFrameColor(1)} className={style.colorBtn} style={{background:`${frame[1]}`}}>
+                                </button>
+                            </div>
                         </li>
                         <li>
-                            <button>
-                                <img src={darkbrown} onClick={()=>setFrameColor(2)} className={style.shelf}></img>
-                                <span>다크 브라운</span>
+                            <div>
+                            <button onClick={()=>setFrameColor(2)} className={style.colorBtn} style={{background:`${frame[2]}`}}>
                             </button>
-                        </li>
-                        <li>
-                            <button>
-                                <img src={whiteshelf} onClick={()=>setFrameColor(3)} className={style.shelf}></img>
-                                <span>화이트</span>
-                            </button>
+                            </div>
                         </li>
                     </ul>
                 </div>
