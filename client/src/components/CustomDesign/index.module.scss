@@ -3,6 +3,7 @@
 *{
   box-sizing: border-box;
 }
+
 .container {
   width: 100%;
   text-align: center;
@@ -237,4 +238,9 @@
   height:50px;
   border-radius: 50%;
   background: red;
+}
+
+.alertMsg{
+  color:red;
+  font-size: 14px;
 }

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import style from './index.module.scss';
 import { useState } from 'react';
@@ -38,15 +39,38 @@ const CustomDesign = () => {
     const [curButton,setCurButton]=useState(0);
     const [frameColor,setFrameColor]=useState(0);
     const [imgUrl,setImageUrl]=useState([0,0,0,0,0]);
+    const [alertMsg,setAlertMsg]=useState("");
 
     const changeBackgroundStyle=(colorNum)=>{
+        if(frameColor!==0){
+            setAlertMsg("프레임과 칼라블록 둘 중 하나만 선택할 수 있습니다.\n 칼라 블록 선택으로 바뀝니다.");
+            setFrameColor(0);
+        }
+        else if(curButton===0){
+            setAlertMsg("원하시는 영역 번호을 선택해주세요");
+        }else{
+            setAlertMsg("");
+        }
         setImageUrl(imgUrl.map((val,idx)=>{
             return idx===curButton?colorNum:val;
         }))
     }
 
-    const changeFrameStyle=(frameNum)=>{
-        return frame[frameNum];
+    const selectArea=(curNum)=>{
+        setCurButton(curNum);
+        setAlertMsg("");
+    }
+
+    const selectFrame=(curNum)=>{
+        
+        if(curButton!==0){
+            setAlertMsg("프레임과 칼라블록 둘 중 하나만 선택할 수 있습니다.\n 프레임 선택으로 바뀝니다.");
+            setCurButton(0);
+            setImageUrl([0,0,0,0,0]);
+        }else{
+            setAlertMsg("");
+        }
+        setFrameColor(curNum);
     }
 
     const hideStyle={
@@ -59,22 +83,23 @@ const CustomDesign = () => {
         <div className={style.inner}>
         <div className={style.imgWrapper}>
             <img src={monitor}></img>
-            <div className={style.firstPart} onClick={()=>setCurButton(1)} style={{backgroundImage:`url(${bgImage[imgUrl[1]]})`,borderTop:`8px solid ${frame[frameColor]}`,borderLeft:`8px solid ${frame[frameColor]}`}}>
+            <div className={style.firstPart} onClick={()=>selectArea(1)} style={frameColor?{backgroundImage:`url(${bgImage[imgUrl[1]]})`,borderTop:`8px solid ${frame[frameColor]}`,borderLeft:`8px solid ${frame[frameColor]}`}:{backgroundImage:`url(${bgImage[imgUrl[1]]})`}}>
                 <div style={imgUrl[1]!==0?hideStyle:null}>1</div>
             </div>
-            <div className={style.secondPart} onClick={()=>setCurButton(2)} style={{backgroundImage:`url(${bgImage[imgUrl[2]]})`, borderTop:`8px solid ${frame[frameColor]}`,borderRight:`8px solid ${frame[frameColor]}`}}>
+            <div className={style.secondPart} onClick={()=>selectArea(2)} style={frameColor?{backgroundImage:`url(${bgImage[imgUrl[2]]})`, borderTop:`8px solid ${frame[frameColor]}`,borderRight:`8px solid ${frame[frameColor]}`}:{backgroundImage:`url(${bgImage[imgUrl[2]]})`}}>
                 <div style={imgUrl[2]!==0?hideStyle:null}>2</div>
             </div>
-            <div className={style.thirdPart} onClick={()=>setCurButton(3)} style={{backgroundImage:`url(${bgImage[imgUrl[3]]})`,borderBottom:`8px solid ${frame[frameColor]}`,borderLeft:`8px solid ${frame[frameColor]}`}}>
+            <div className={style.thirdPart} onClick={()=>selectArea(3)} style={frameColor?{backgroundImage:`url(${bgImage[imgUrl[3]]})`,borderBottom:`8px solid ${frame[frameColor]}`,borderLeft:`8px solid ${frame[frameColor]}`}:{backgroundImage:`url(${bgImage[imgUrl[3]]})`}}>
                 <div style={imgUrl[3]!==0?hideStyle:null}>3</div>
             </div>
-            <div className={style.fourthPart} onClick={()=>setCurButton(4)} style={{backgroundImage:`url(${bgImage[imgUrl[4]]})`,borderBottom:`8px solid ${frame[frameColor]}`,borderRight:`8px solid ${frame[frameColor]}`}}>
+            <div className={style.fourthPart} onClick={()=>selectArea(4)} style={frameColor?{backgroundImage:`url(${bgImage[imgUrl[4]]})`,borderBottom:`8px solid ${frame[frameColor]}`,borderRight:`8px solid ${frame[frameColor]}`}:{backgroundImage:`url(${bgImage[imgUrl[4]]})`}}>
                 <div style={imgUrl[4]!==0?hideStyle:null}>4</div>
             </div>
           
         </div>
         <div className={style.colorWrapper}>
         <div className={style.colorTitle}>내 스마트 모니터와 어울리는 컬러와 소재 입히기</div>
+        <div className={style.alertMsg}>{alertMsg}</div>
             <div className={style.colorPalette}>
                 <div className={style.colorlist}>
                     <span>글램 글래스</span>
@@ -231,13 +256,13 @@ const CustomDesign = () => {
                     <ul className={style.myEditionColorList}>
                         <li>
                             <div>
-                                <button onClick={()=>setFrameColor(1)} className={style.colorBtn} style={{background:`${frame[1]}`}}>
+                                <button onClick={()=>selectFrame(1)} className={style.colorBtn} style={{background:`${frame[1]}`}}>
                                 </button>
                             </div>
                         </li>
                         <li>
                             <div>
-                            <button onClick={()=>setFrameColor(2)} className={style.colorBtn} style={{background:`${frame[2]}`}}>
+                            <button onClick={()=>selectFrame(2)} className={style.colorBtn} style={{background:`${frame[2]}`}}>
                             </button>
                             </div>
                         </li>
