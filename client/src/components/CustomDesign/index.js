@@ -31,7 +31,7 @@ const bgImage=[
     redBrown
 ]
 
-const frame=["none","red","brown","blue"];
+const frame=["none","#C6AC89","#96634A","blue"];
 
 const CustomDesign = () => {
 

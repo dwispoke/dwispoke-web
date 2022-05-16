@@ -1,5 +1,8 @@
 @import "../../styles/mixins";
 
+*{
+  box-sizing: border-box;
+}
 .container {
   width: 100%;
   text-align: center;
@@ -67,8 +70,8 @@
   & > div {
     border: 1px solid #5f7464;
     cursor: pointer;
-    width: 196.5px;
-    min-height: 115.22px;
+    width: 198px;
+    min-height: 117.4px;
     position: absolute;
     display: flex;
     align-items: center;
@@ -79,8 +82,8 @@
 
 
     @include if-mobile {
-      width: 146.1px;
-      min-height: 90px;
+      width: 148px;
+      min-height: 91px;
     }
 
     & > div {
